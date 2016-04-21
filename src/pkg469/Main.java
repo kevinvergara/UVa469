@@ -15,7 +15,8 @@ class Main {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     
-    TC = sc.nextInt(); sc.nextLine();
+    TC = sc.nextInt(); 
+    sc.nextLine();
     sc.nextLine(); // linea ficticia
 
     while (TC-- > 0) {
@@ -68,10 +69,10 @@ class Main {
         return 0;
     } // sólo queremos c1
     
-    cuadro[r][c] = c2; // important step to avoid cycling!
-    int ans = 1; // coloring c1 -> c2, add 1 to answer
+    cuadro[r][c] = c2; // paso para evitar los ciclos!
+    int ans = 1; // pintar c1 -> c2, añadir al menos 1 para responder
     
-    for (int d = 0; d < 8; d++){ // recurse to neighbors
+    for (int d = 0; d < 8; d++){ // vecinos
       ans += floodfill(r + dr[d], c + dc[d], c1, c2);
     }
     
